@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="bootstrap.css">
+    <link rel="stylesheet" href="style.css">
+    <script defer src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz"
+        crossorigin="anonymous"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css" />
+</head>
+
+<body>
+    <div class="border border-1 border-danger mx-auto w-50 p-3 bg-body-tertiary">
+        <h1 class="text-danger fs-1 text-center">E-Commerce</h1>
+        <input class="container-fluid p-3 rounded border border-none" type="text" placeholder="Enter your item"
+            id="items">
+        <button onclick="collect()" type="button" class="btn btn-danger container-fluid mb-3 mt-3" id="addItem">Add
+            item</button>
+        <div class="alert alert-primary animate__animated animate__shakeX animate__infinite text-center fw-semibold"
+            role="alert" id="appearr">
+            Item cannot be empty!!
+        </div>
+    </div>
+
+    <div class="border border-1 border-danger mx-auto w-50 p-3 mt-3" id="notYet">
+        <div>No items yet</div>
+    </div>
+
+    <section class=" text-center mt-3 " id="showButton">
+        <div id="screennn"></div>
+        <button onclick="delLast()" type="button" class="btn btn-primary ms-3">Delete Last</button>
+        <button onclick="delFirst()" type="button" class="btn btn-secondary ms-3">Delete First</button>
+        <button onclick="delAny()" type="button" class="btn btn-success ms-3">Delete Any</button>
+        <button type="button" class="btn btn-danger ms-3" data-bs-toggle="modal" data-bs-target="#exampleModal">Add
+            First</button>
+        <button onclick="delAll()" type="button" class="btn btn-warning ms-3">Delete All</button>
+        <button type="button" class="btn btn-info ms-3" data-bs-toggle="modal" data-bs-target="#exampleModal2">Edit
+            Any</button>
+    </section>
+
+
+    <!-- Button trigger modal -->
+
+    <!-- Modal One-->
+    <div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+        <div class="modal-dialog">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h1 class="modal-title fs-5" id="exampleModalLabel">Add to the beginning</h1>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                </div>
+                <div class="modal-body">
+                    <input class="container-fluid p-3 rounded border border-none" type="text"
+                        placeholder="Enter your item" id="firstitem">
+                    <div class="alert alert-primary animate__animated animate__shakeX animate__infinite text-center fw-semibold" role="alert" id="errors" style="display: none;">
+                        Item not yet added
+                    </div>
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+                    <button type="button" class="btn btn-primary" onclick="addFirst()">Save changes</button>
+
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Modal to Edit-->
+    <div class="modal fade" id="exampleModal2" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+        <div class="modal-dialog">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h1 class="modal-title fs-5" id="exampleModalLabel">Edit the input</h1>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                </div>
+                <div class="modal-body">
+                    <input class="container-fluid p-3 rounded border border-none" type="text"
+                        placeholder="Specify the number you want to edit" id="itemnumber">
+
+                    <input class="container-fluid p-3 rounded border border-none" type="text"
+                        placeholder="State your replacement" id="replacement">
+                    <div class="alert alert-primary animate__animated animate__shakeX animate__infinite text-center fw-semibold" role="alert" id="errors" style="display: none;">
+                        Item not yet added
+                    </div>
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+                    <button type="button" class="btn btn-primary" onclick="editAny()">Save changes</button>
+
+                </div>
+            </div>
+        </div>
+    </div>
+
+
+
+
+
+    <script src="script.js">
+
+    </script>
+</body>
+
+</html>
